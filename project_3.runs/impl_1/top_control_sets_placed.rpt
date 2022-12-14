@@ -1,0 +1,103 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
+| Date         : Fri Nov 18 01:23:39 2022
+| Host         : LAPTOP-U14IPVLL running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file top_control_sets_placed.rpt
+| Design       : top
+| Device       : xc7a35t
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    25 |
+|    Minimum number of control sets                        |    25 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    68 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    25 |
+| >= 0 to < 4        |     3 |
+| >= 4 to < 6        |     2 |
+| >= 6 to < 8        |     1 |
+| >= 8 to < 10       |     5 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |    14 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              35 |           19 |
+| No           | No                    | Yes                    |               1 |            1 |
+| No           | Yes                   | No                     |              31 |           12 |
+| Yes          | No                    | No                     |             190 |           45 |
+| Yes          | No                    | Yes                    |              13 |            3 |
+| Yes          | Yes                   | No                     |              78 |           29 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++---------------------------+-----------------------------+------------------------+------------------+----------------+--------------+
+|        Clock Signal       |        Enable Signal        |    Set/Reset Signal    | Slice Load Count | Bel Load Count | Bels / Slice |
++---------------------------+-----------------------------+------------------------+------------------+----------------+--------------+
+|  txclk_BUFG               | TX/tx_out3_out              | enable_IBUF            |                1 |              1 |         1.00 |
+|  txclk_BUFG               | load_send                   | enable_IBUF            |                1 |              1 |         1.00 |
+| ~state_reg_reg[4]_i_3_n_0 | prosessing_done_i_1_n_0     | clear                  |                1 |              1 |         1.00 |
+|  txclk_BUFG               | TX/tx_cnt[3]_i_1_n_0        | enable_IBUF            |                1 |              4 |         4.00 |
+|  txclk_BUFG               |                             | enable_IBUF            |                3 |              5 |         1.67 |
+| ~state_reg_reg[4]_i_3_n_0 |                             | clear                  |                4 |              6 |         1.50 |
+|  txclk_BUFG               | TX/tx_reg                   | enable_IBUF            |                1 |              8 |         8.00 |
+| ~state_reg_reg[4]_i_3_n_0 | d4                          |                        |                2 |              8 |         4.00 |
+| ~state_reg_reg[4]_i_3_n_0 | d5                          |                        |                3 |              8 |         2.67 |
+| ~state_reg_reg[4]_i_3_n_0 | din[7]_i_1_n_0              | clear                  |                5 |              8 |         1.60 |
+| ~state_reg_reg[4]_i_3_n_0 | line_buffer_3[2][7]_i_1_n_0 |                        |                2 |              8 |         4.00 |
+| ~state_reg_reg[4]_i_3_n_0 | line_buffer_2               |                        |                3 |             16 |         5.33 |
+| ~state_reg_reg[4]_i_3_n_0 | line_buffer_2[0][7]_i_1_n_0 |                        |                4 |             16 |         4.00 |
+| ~state_reg_reg[4]_i_3_n_0 | line_buffer_1               |                        |                4 |             16 |         4.00 |
+| ~state_reg_reg[4]_i_3_n_0 | line_buffer_3[1][7]_i_1_n_0 |                        |                4 |             16 |         4.00 |
+|  txclk_BUFG               | address[0]_i_1_n_0          | enable_IBUF            |                5 |             17 |         3.40 |
+| ~state_reg_reg[4]_i_3_n_0 | address_IM[0]_i_1_n_0       | clear                  |                5 |             17 |         3.40 |
+| ~state_reg_reg[4]_i_3_n_0 | ptr1[16]_i_1_n_0            | clear                  |                5 |             17 |         3.40 |
+| ~state_reg_reg[4]_i_3_n_0 | ptr2[16]_i_1_n_0            | clear                  |                7 |             17 |         2.43 |
+|  clk_IBUF_BUFG            |                             | clk0/count[20]_i_1_n_0 |                6 |             21 |         3.50 |
+| ~state_reg_reg[4]_i_3_n_0 | a3                          |                        |                4 |             24 |         6.00 |
+| ~state_reg_reg[4]_i_3_n_0 | a0                          |                        |                4 |             24 |         6.00 |
+| ~state_reg_reg[4]_i_3_n_0 | a6                          |                        |                5 |             24 |         4.80 |
+| ~state_reg_reg[4]_i_3_n_0 | d1                          |                        |               10 |             30 |         3.00 |
+|  clk_IBUF_BUFG            |                             |                        |               19 |             35 |         1.84 |
++---------------------------+-----------------------------+------------------------+------------------+----------------+--------------+
+
+
