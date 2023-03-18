@@ -16,9 +16,6 @@
 // Revision:
 // Revision 0.01 - File Created
 // Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
 
 module freq_div(
 input clk,output reg  slow_clk
